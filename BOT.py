@@ -45,8 +45,8 @@ async def on_raw_reaction_add(payload):
 @client.command( pass_context = True )
 
 async def wr( ctx ,*,arg):
-    if not checkAuthor(author.roles): return
     author = ctx.message.author
+    if not checkAuthor(author.roles): return
     await ctx.send(f'{ author.mention } OK')
     await client.get_channel(int(arg.split()[0])).send(arg.split(maxsplit=1)[1])
 
